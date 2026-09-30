@@ -1,18 +1,55 @@
-cat > contact.html <<'EOF'
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Contact</title>
-  <link rel="stylesheet" href="css/ligne.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon site - Contact</title>
+  <link rel="stylesheet" href="ligne.css">
 </head>
 <body>
-  <h1>Contact</h1>
-  <p>Email : contact@exemple.fr</p>
-  <a href="index.html">Retour à l'accueil</a>
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="../index.html" class="logo">Rachid Dalouse</a>
+      <nav class="menu">
+        <a href="../index.html">Accueil</a>
+        <a href="contact.html" class="actif">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banniere">
+    <h1>Contact</h1>
+    <p>Une question, une idée ? Écrivez-moi.</p>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <form class="formulaire">
+        <div class="champ">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        </div>
+        <div class="champ">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="vous@exemple.fr" required>
+        </div>
+        <div class="champ">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+        </div>
+        <button type="submit" class="bouton bouton-vert">Envoyer</button>
+      </form>
+
+      <div class="infos">
+        <p>Vous pouvez aussi m'écrire directement : dalouserachid@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="copyright">
+    &copy; 2026 Rachid Dalouse - Tous droits réservés
+  </footer>
+
 </body>
 </html>
-EOF
-
-git add contact.html
-git commit -m "Ajout de la page contact"

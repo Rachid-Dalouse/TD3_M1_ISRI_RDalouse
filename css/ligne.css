@@ -1,16 +1,228 @@
-(
-echo body {
-echo   font-family: Arial, sans-serif;
-echo }
-echo.
-echo h1 {
-echo   color: blue;
-echo   text-align: center;
-echo }
-echo.
-echo .copyright {
-echo   text-align: center;
-echo   font-size: 12px;
-echo }
-) > css\ligne.css
-git commit -am "Copyright : petite police"
+:root {
+  --vert: #2f6f4f;
+  --vert-clair: #8fbc8f;
+  --vert-pale: #eef6f0;
+  --texte: #1f2a24;
+  --gris: #6b7a72;
+  --blanc: #ffffff;
+  --rayon: 12px;
+  --ombre: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--texte);
+  background-color: var(--vert-pale);
+  line-height: 1.6;
+}
+
+.conteneur {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* En-tête et menu */
+.entete {
+  background-color: var(--vert);
+  box-shadow: var(--ombre);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.entete .conteneur {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  color: var(--blanc);
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+}
+
+.menu a {
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+}
+
+.menu a:hover,
+.menu a.actif {
+  background-color: var(--vert-clair);
+}
+
+/* Bannière */
+.banniere {
+  background: linear-gradient(135deg, var(--vert), var(--vert-clair));
+  color: var(--blanc);
+  text-align: center;
+  padding: 80px 20px;
+}
+
+h1 {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.banniere p {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-bottom: 28px;
+}
+
+.bouton {
+  display: inline-block;
+  background-color: var(--blanc);
+  color: var(--vert);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: var(--ombre);
+  transition: transform 0.2s;
+}
+
+.bouton:hover {
+  transform: translateY(-2px);
+}
+
+.bouton-vert {
+  background-color: var(--vert);
+  color: var(--blanc);
+}
+
+/* Sections */
+.section {
+  padding: 60px 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+  color: var(--vert);
+  margin-bottom: 36px;
+}
+
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.carte {
+  background-color: var(--blanc);
+  border-radius: var(--rayon);
+  padding: 28px;
+  box-shadow: var(--ombre);
+  transition: transform 0.2s;
+}
+
+.carte:hover {
+  transform: translateY(-4px);
+}
+
+.carte .icone {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.carte h3 {
+  color: var(--vert);
+  margin-bottom: 8px;
+}
+
+.carte p {
+  color: var(--gris);
+}
+
+/* Formulaire de contact */
+.formulaire {
+  background-color: var(--blanc);
+  border-radius: var(--rayon);
+  padding: 36px;
+  box-shadow: var(--ombre);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.champ {
+  margin-bottom: 20px;
+}
+
+.champ label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.champ input,
+.champ textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfd8d3;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.champ input:focus,
+.champ textarea:focus {
+  outline: none;
+  border-color: var(--vert);
+  box-shadow: 0 0 0 3px rgba(47, 111, 79, 0.15);
+}
+
+.infos {
+  text-align: center;
+  margin-top: 32px;
+  color: var(--gris);
+}
+
+/* Pied de page */
+.copyright {
+  background-color: var(--texte);
+  color: #b8c4bd;
+  text-align: center;
+  font-size: 14px;
+  padding: 24px 20px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .entete .conteneur {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .banniere {
+    padding: 50px 20px;
+  }
+}

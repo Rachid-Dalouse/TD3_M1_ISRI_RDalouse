@@ -2,18 +2,54 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mon site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon site - Accueil</title>
   <link rel="stylesheet" href="css/ligne.css">
 </head>
 <body>
-  <nav>
-    <a href="index.html">Accueil</a> |
-    <a href="contact.html">Contact</a>
-  </nav>
-  <h1>Hello World</h1>
-  <p>Bienvenue sur mon site.</p>
-  <div class="copyright">
+
+  <header class="entete">
+    <div class="conteneur">
+      <a href="index.html" class="logo">Rachid Dalouse</a>
+      <nav class="menu">
+        <a href="index.html" class="actif">Accueil</a>
+        <a href="css/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banniere">
+    <h1>Hello World</h1>
+    <p>Bienvenue sur mon site, réalisé et versionné avec Git.</p>
+    <a href="css/contact.html" class="bouton">Me contacter</a>
+  </section>
+
+  <section class="section">
+    <div class="conteneur">
+      <h2>Ce que j'ai appris</h2>
+      <div class="cartes">
+        <div class="carte">
+          <div class="icone">🌱</div>
+          <h3>Versionner</h3>
+          <p>Initialiser un dépôt, suivre les fichiers et enregistrer chaque étape avec des commits clairs.</p>
+        </div>
+        <div class="carte">
+          <div class="icone">🌿</div>
+          <h3>Travailler en branches</h3>
+          <p>Développer chaque fonctionnalité à part, puis la fusionner avec merge ou --no-ff.</p>
+        </div>
+        <div class="carte">
+          <div class="icone">🔀</div>
+          <h3>Résoudre et rebaser</h3>
+          <p>Gérer les conflits sereinement et garder un historique propre grâce au rebase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="copyright">
     &copy; 2026 Rachid Dalouse - Tous droits réservés
-  </div>
+  </footer>
+
 </body>
 </html>
