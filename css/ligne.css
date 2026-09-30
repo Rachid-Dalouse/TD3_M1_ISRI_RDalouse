@@ -1,12 +1,15 @@
-cat >> css/ligne.css <<'EOF'
-
-h1 {
-  color: green;
-  text-align: center;
-}
-
-footer { color: gray; }
-
-EOF
-
-git commit -am "Mise en forme du titre h1"
+(
+echo body {
+echo   font-family: Arial, sans-serif;
+echo }
+echo.
+echo h1 {
+echo   color: blue;
+echo   text-align: center;
+echo }
+echo.
+echo .copyright {
+echo   text-align: center;
+echo }
+) > css\ligne.css
+git commit -am "Copyright : centre"mmit -am "Mise en forme du titre h1"
