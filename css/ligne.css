@@ -1,0 +1,9 @@
+mkdir css
+cat > css/ligne.css <<'EOF'
+body {
+  font-family: Arial, sans-serif;
+}
+EOF
+
+git add css/ligne.css
+git commit -m "Ajout de la feuille de style ligne.css"
