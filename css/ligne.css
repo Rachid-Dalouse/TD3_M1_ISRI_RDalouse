@@ -10,6 +10,7 @@ echo }
 echo.
 echo .copyright {
 echo   text-align: center;
+echo   font-size: 12px;
 echo }
 ) > css\ligne.css
-git commit -am "Copyright : centre"mmit -am "Mise en forme du titre h1"
+git commit -am "Copyright : petite police"
