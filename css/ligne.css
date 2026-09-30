@@ -4,6 +4,9 @@ h1 {
   color: #2a6f97;
   text-align: center;
 }
+
+footer { color: gray; }
+
 EOF
 
 git commit -am "Mise en forme du titre h1"
