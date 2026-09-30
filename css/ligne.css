@@ -1,7 +1,7 @@
 cat >> css/ligne.css <<'EOF'
 
 h1 {
-  color: #2a6f97;
+  color: blue;
   text-align: center;
 }
 
