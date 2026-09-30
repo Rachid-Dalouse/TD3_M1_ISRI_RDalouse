@@ -1,0 +1,16 @@
+cat > index.html <<'EOF'
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon site</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+</body>
+</html>
+EOF
+
+git status
+git add index.html
+git commit -m "Ajout de index.html avec Hello World"
