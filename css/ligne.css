@@ -11,11 +11,13 @@ echo.
 echo .menu {
 echo   background-color: #8fbc8f;
 echo   padding: 10px;
+echo   border-radius: 5px;
 echo }
 echo.
 echo .menu a {
 echo   color: white;
 echo   text-decoration: none;
+echo   font-weight: bold;
 echo }
 ) > css\ligne.css
-git commit -am "Menu : fond vert pale et liens blancs"
+git commit -am "Menu : coins arrondis et liens en gras"
