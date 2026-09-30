@@ -8,9 +8,21 @@ echo   color: blue;
 echo   text-align: center;
 echo }
 echo.
+echo .menu {
+echo   background-color: #8fbc8f;
+echo   padding: 10px;
+echo }
+echo.
+echo .menu a {
+echo   color: white;
+echo   text-decoration: none;
+echo }
+echo.
 echo .copyright {
 echo   text-align: center;
 echo   font-size: 12px;
+echo   color: gray;
 echo }
 ) > css\ligne.css
-git commit -am "Copyright : petite police"
+git add css\ligne.css
+git rebase --continue
