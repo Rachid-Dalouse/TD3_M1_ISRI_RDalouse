@@ -1,9 +1,9 @@
-mkdir css
-cat > css/ligne.css <<'EOF'
-body {
-  font-family: Arial, sans-serif;
+cat >> css/ligne.css <<'EOF'
+
+h1 {
+  color: #2a6f97;
+  text-align: center;
 }
 EOF
 
-git add css/ligne.css
-git commit -m "Ajout de la feuille de style ligne.css"
+git commit -am "Mise en forme du titre h1"
