@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Inscription</title>
+  <style>
+    #barre { width: 200px; height: 8px; background: #ddd; border-radius: 4px; }
+    #niveau { height: 100%; width: 0; border-radius: 4px; transition: width 0.3s; }
+    #niveau.faible { background: #e74c3c; }
+    #niveau.moyen { background: #f39c12; }
+    #niveau.fort { background: #27ae60; }
+    .valide { color: #27ae60; }
+    .invalide { color: #e74c3c; }
+  </style>
 </head>
 <body>
   <h1>Inscription</h1>
@@ -10,6 +19,7 @@
     <div class="form-group">
       <label for="password">Mot de passe</label>
       <input type="password" id="password" required>
+      <div id="barre"><div id="niveau"></div></div>
       <p id="feedback"></p>
     </div>
 
@@ -17,19 +27,34 @@
   </form>
 
   <script>
+    // au moins 8 caractères, au moins une lettre et au moins un chiffre
+    const REGEX_MOT_DE_PASSE = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+
     function validerMotDePasse(motDePasse) {
-      // au moins 8 caractères, au moins une lettre et au moins un chiffre
-      const regex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
-      return regex.test(motDePasse);
+      return REGEX_MOT_DE_PASSE.test(motDePasse);
+    }
+
+    function calculerForce(motDePasse) {
+      let force = 0;
+      if (motDePasse.length >= 8) force++;
+      if (/[A-Za-z]/.test(motDePasse)) force++;
+      if (/\d/.test(motDePasse)) force++;
+      if (/[.&#\-_]/.test(motDePasse)) force++;
+      return force;
     }
 
     const inputPassword = document.getElementById('password');
     const feedback = document.getElementById('feedback');
     const submitBtn = document.getElementById('submitBtn');
+    const niveau = document.getElementById('niveau');
 
     inputPassword.addEventListener('input', (e) => {
       const estValide = validerMotDePasse(e.target.value);
+      const force = calculerForce(e.target.value);
+      niveau.style.width = (force * 25) + '%';
+      niveau.className = force <= 1 ? 'faible' : (force <= 3 ? 'moyen' : 'fort');
       feedback.textContent = estValide ? 'Mot de passe valide' : 'Mot de passe trop faible';
+      feedback.className = estValide ? 'valide' : 'invalide';
       submitBtn.disabled = !estValide;
     });
   </script>
