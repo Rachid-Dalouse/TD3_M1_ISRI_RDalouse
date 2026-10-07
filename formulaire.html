@@ -24,9 +24,13 @@
     }
 
     const inputPassword = document.getElementById('password');
+    const feedback = document.getElementById('feedback');
+    const submitBtn = document.getElementById('submitBtn');
 
     inputPassword.addEventListener('input', (e) => {
       const estValide = validerMotDePasse(e.target.value);
+      feedback.textContent = estValide ? 'Mot de passe valide' : 'Mot de passe trop faible';
+      submitBtn.disabled = !estValide;
     });
   </script>
 </body>
